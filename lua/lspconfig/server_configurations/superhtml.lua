@@ -1,7 +1,7 @@
 local util = require 'lspconfig.util'
 
 local language_id_of = {
-  shtml = 'suprehtml'
+  shtml = 'superhtml'
 }
 
 return {
