@@ -21,10 +21,9 @@ to your configuration:
 
 ```lua
 require'lspconfig'.superhtml.setup {
-  filetypes = { 'superhtml'}
+  filetypes = { 'superhtml' }
 }
 ```
-
         ]],
     default_config = {
       root_dir = [[util.root_pattern(".git")]],
