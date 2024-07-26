@@ -1,24 +1,30 @@
 local util = require 'lspconfig.util'
 
-local language_id_of = {
-  shtml = 'superhtml',
-}
-
 return {
   default_config = {
     cmd = { 'superhtml', 'lsp' },
-    filetypes = { 'shtml' },
+    filetypes = { 'superhtml', 'html' },
     root_dir = util.root_pattern '.git',
     single_file_support = true,
-    get_language_id = function(_, ftype)
-      return language_id_of[ftype]
-    end,
   },
   docs = {
     description = [[
 https://github.com/kristoff-it/superhtml
 
 HTML Language Server & Templating Language Library
+
+This LSP is designed to tightly adhere to the HTML spec as well as enforcing
+some additional rules that ensure HTML clarity.
+
+If you want to disable HTML support for another HTML LSP, add the following
+to your configuration:
+
+```lua
+require'lspconfig'.superhtml.setup {
+  filetypes = { 'superhtml'}
+}
+```
+
         ]],
     default_config = {
       root_dir = [[util.root_pattern(".git")]],
